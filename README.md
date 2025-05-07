@@ -8,7 +8,6 @@ A Discord bot that integrates with the LUNA graph-based workflow engine.
 - Captures comprehensive data about messages, authors, members, and channels
 - Forwards all data to LUNA workflows for processing
 - Maintains separate sessions for each Discord channel
-- Responds back to Discord with LUNA's responses
 
 ## Setup
 
@@ -74,13 +73,12 @@ This bot communicates with LUNA using the RESTful API. For each channel, it:
    - Member details (roles, nickname, etc.)
    - Channel information (name, type, etc.)
    - Guild (server) details
-3. Processes LUNA's responses and replies in the Discord channel
 
 ## LUNA Workflow Requirements
 
 Your LUNA workflow should:
 
-1. Accept incoming messages in the format provided by this bot
+1. Contain a discord_operator flow to run for each session
 2. Process the rich context data as needed
 3. Generate responses that the bot will relay back to Discord
 
